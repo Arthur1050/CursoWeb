@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Box Model</title>
+    <style>
+
+        /* Do centro do box model até a borda temos: 
+            - Contente = O conteúdo dentro da tag.
+            - Padding = Um espaço entre o conteúdo e a borda da tag
+            - Border = O contorno da tag.
+            - Margin = O espaçamento entre os componentes/as tags.
+        */
+
+        body {
+            font-size: 80px;
+            margin: 0;
+        }
+
+        .c1 {
+            background-color: orange;
+        }
+
+        .c2 {
+            background-color: skyblue;
+        }
+
+        .c3 {
+            background-color: tomato;
+        }
+
+        div {
+            float: left; /* Faz todos os elementos caírem para a esquerda (ficando inline tbm). */
+            padding-top: 100px; /* Dá um espaçamento em cima do elemento ainda dentro da aréa do elemento. */
+            padding: 10px 50px 100px 150px; /* Aplica no sentido hórarios (cima, direita, baixo e esquerda) */
+            padding: 100px 50px; /* Aplica a primeira variavel em cima e embaixo e a segunda na direita e esquerda */
+            padding: 50px; /* Aplica de todos os lados igualmente */
+            margin: 0px 20px;
+            border: solid 15px black;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="c1">1</div>
+    <div class="c2">2</div>
+    <div class="c3">3</div>
+</body>
+
+</html>

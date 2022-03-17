@@ -1,0 +1,75 @@
+<!-- <h1>Video</h1> -->
+
+<!-- ControlsList='nodownload' remove a opção de download do player. -->
+<video id="meuVideo" width="800" height="450" controls autoplay controlsList='nodownload'>  <!-- Propriedade "controls faz com que apareça os controles do video." -->
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4"> <!-- Apaguei o atributo "src" da tag video e criei o source dentro dela-->
+</video>
+
+<div wm-progresso="meuVideo" class="progresso">
+    <div></div>
+</div>
+
+<div>
+    <button wm-play="meuVideo">Play</button>
+    <button wm-pause="meuVideo">Pause</button>
+</div>
+
+<style>
+    .progresso {
+        height: 20px;
+        width: 500px;
+        border: solid 1px #444;
+        background-color: darkgray;
+        margin: 10px;
+    }
+
+    .progresso div {
+        height: 100%;
+        width: 0%; /* A Largura vai começar como 0% e preciso fazer com que essa porcentagem aumente de acordo com o video. */
+        background-color: darkorange;
+    }
+</style>
+
+<script>
+
+    var barra = document.querySelector('.progresso div')
+    const video = document.querySelector('#meuVideo')
+    //setInterval(()=>{console.log(video.currentTime)}, 1000)
+
+    video.addEventListener('playing', (event) => {
+        function moveBar() {
+            var nowTemp = timeVideo()
+            if (nowTemp < 100) {
+                setTimeout(()=>{progressBar(nowTemp); moveBar()}, 10)
+            }
+            else {console.log('O video acabou')}
+        }
+        
+        moveBar()
+    })
+
+    function timeVideo() {
+        const tempoTotal = video.duration
+        var tempoDecorrido = video.currentTime
+        return emPorcentagem = (tempoDecorrido / tempoTotal) * 100
+    }
+
+    function progressBar(nowTime) {
+        barra.style.width = nowTime + '%'
+    }
+
+    const buttonPlay = document.querySelector('[wm-play]')
+    const buttonPause = document.querySelector('[wm-pause]')
+    var isVideoPaused = video.paused
+
+    buttonPlay.addEventListener('click', (e) => {
+        console.log('Video play!')
+        video.play()
+    })
+
+    buttonPause.addEventListener('click', (e) => {
+        console.log('Video Pausado.')
+        video.pause()
+    })
+
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Altura e Largura</title>
+    <style>
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            font-size: 40px;
+            background-color: coral;
+            height: 100%;
+            margin: 0;
+        }
+
+        div {
+            background-color: seagreen;
+        }
+
+        span {
+            background-color: dodgerblue;
+        }
+
+        span, div {
+            width: 50%;
+            height: 50%; /* Não muda nada, pois os 50% é relativo à altura do body, que é do mesmo tamanho dos elementos dele. */
+            height: 250px; /* Muda, pois é um valor mais "exato" */
+            height: 50%; /* Vai funcionar pois o body e o html agr tem o atributo 100% da propriedade height. */
+            display: block;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>Título</div>
+    <span>Subtítulo</span>
+</body>
+
+</html>

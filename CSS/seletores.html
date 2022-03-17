@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selectors</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+
+        li {
+            margin-left: 60px;
+        }
+
+        /* Possíveis seletores 
+         
+        *{
+            Seletor universal
+        }
+
+        .tag {
+            Seletor de clases
+        }
+
+        #aprovados {
+            Seletor de id
+        }
+
+        #aninhado > div {
+            Pega o elemento que está diretamente aninhado com o id (O primeiro dos filhos; Filho direto)
+        }
+
+        #aninhado section {
+            Pega qualquer descendente do elemento "#aninhado" sendo uma tag section
+        }
+
+        p + ul {
+            Seleciona irmãos adjacentes, elementos que estão um do lado do outro (no caso selecionara o ul que vem depois do p) 
+        }
+
+        p ~ ol {
+            Seleciona irmão independente se estão do lado um do outro, o único critério é q sejam descendentes do mesmo pai
+        }
+
+        [feira] {
+            Pega todo elemento com o atributo "feira"
+        }
+
+        [feira=casa] {
+            Pega todo elemento com attr "feira" cujo seu valor seja SOMENTE "casa".
+        }
+        
+        [feira~=empresa] {
+            Pega elementos com attr "feira" cujo um de seus valores separados por espaço seja "empresa" graças ao ~ antes do =.
+        }
+
+        [feira*=sa] {
+            Pega elementos com attr "feira" cujo dentro do texto do seus valores contanha "sa"
+        }
+
+
+            Seletores pseudo-clases
+        
+        span:nth-child(1) {
+            Seleciona um elemento "span" que está classificado em primeiro lugar como filho de outro elemento.
+            Todos os elementos span que aparece primeiro como filho de outros elementos.
+        }
+
+        section > :nth-child(odd) {
+            Pega todos os elementos ímpares filhos do elemento section. No caso de "even" ao invés de "odd", os pares.
+        }
+
+        section > :nth-child(odd), ul, p {
+            Separar os seletores com vírgula para aplicar os mesmos efeitos em outros elementos.
+        }
+
+        section > :nth-child(odd) label {
+            Seleciona os labels dentro dos filhos ímpares da tag section.
+        }
+
+        section > span:nth-of-type(2) {
+            Seleciona o segundo elemento da tag section que representa um span.
+            Seleciona um segundo elemento declarado como span dentro da tag section.
+        }
+
+        */
+    </style>
+</head>
+
+<body>
+    <div class='tag'>
+        <div class='tag'>
+            <p class='tag'>1</p>
+            <ul class='tag' feira='casa'>
+                <li>Arroz</li>
+                <li>Feijão</li>
+            </ul>
+            <ul class='tag' feira='escritorio empresa'>
+                <li>Café</li>
+                <li>Água</li>
+            </ul>
+            <ol id='aprovados' class='tag'>
+                <li>Maria</li>
+                <li>Pedro</li>
+                <li>Ana</li>
+            </ol>
+            <div id='aninhado' class='tag'>
+                <div class="tag">
+                    <section class='tag'>
+                        <span class='tag'>1</span>
+                        <p class='tag'>2</p>
+                        <span class='tag'>3</span>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

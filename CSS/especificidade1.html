@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Especificidade CSS</title>
+    <style>
+        /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+
+        /* 
+            Em linhas gerais... Especifidade do maior para o menor
+
+            1. Regras com !important
+            2. Seletores mais especificos
+            3. Ultima regra processada (empate)
+        */
+        
+        p {
+            background-color: #aaa;
+        }
+        
+        .observacao {
+            background-color: #5F5; /* Classes tem prioridade na formatação de um elemento por ser considerado */
+            border: dashed 5px;                             /* mais especifico que a propria tag. */
+            padding: 200px !important; /* Burla a ordem da especividade aplicando a propriedade na força bruta */
+            font-size: 40px;
+        }
+
+        p.observacao { /* Classe associada à um paragrafo mais especifica que a classe sozinha. */
+            padding: 2px;
+            background: linear-gradient(to right, red, yellow);
+        }
+            
+
+    </style>
+</head>
+
+<body>
+    <p class='observacao'>Olha essa observação!!!!</p>
+</body>
+
+</html>

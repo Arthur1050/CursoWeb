@@ -1,0 +1,26 @@
+<h1>Links</h1>
+
+<!-- URL Absoluta (URL's q contem "http://") -->
+<a id="inicio" href="http://www.google.com.br">Google 1</a> <br> <!-- A primeira opção abre o link na própria pag -->
+<a href="http://www.google.com.br" target="_blank">Google 2 (New aba)</a> <br><br> <!-- A segunda abre o link numa nova aba -->
+<!-- Se a URL não for absoluta (não tiver o "http://"), ela acabará por tentar acessar um endereço dentro do meu sistema, e não o google de fato -->
+
+
+<!-- URL Relativa (URL's q acessam arquivos do sistema) -->
+<a href="index.html">Voltar 1</a><br> <!-- Acessa o arquivo contido na atual pasta q está sendo navegada -->
+<a href="/index.html">Voltar 2</a><br> <!-- Acessa o arquivo da pasta raíz do projeto (pasta HTML) -->
+<a href="../index.html">Voltar 3</a><br><br> <!-- Acessa o arquivo uma pasta antes da atual pasta a ser navegada -->
+
+
+<!-- Link para enviar e-mail's -->
+<a href="mailto:email@empresa.com.br">Entre em contado</a> <!-- "mailto" no link abre um provedor de email com o endereço destinario descrito na linha --><br><br>
+
+
+<!-- Link ancorado para navegar dentro da própria pagina (ir pra cima, pra baixo...) -->
+<div id="noticia" style="position: absolute;top: 2000px;;">
+    <h1>Notícia Buemba!</h1>
+    <p>Não era nada... :)</p>
+    <a href="#inicio">Voltar</a>
+</div>
+
+<a href="#noticia">Ir para Notícia</a> <!-- Navegara até o elemento cujo o id seja "noticia" -->

@@ -1,0 +1,66 @@
+<h1>Tabela</h1>
+
+<!-- O corpo de uma tabela segue a mesma lógica de uma página html (header(cabeçalho), body(corpo) e footer(rodapé.)) -->
+<table>
+    <caption>Produtos</caption>
+    <thead> <!-- thead = "table head". Define as linhas aqui dentro como linhas do cabeçalho da tabela -->
+        <tr> <!-- tr = "table rool". Adiciona uma linha horizontal à tabela -->
+            <th>Produto</th> <!-- td = "table head". As colunas do cabeçalho -->
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody> <!-- tbody = "table boddy". Corpo da tabela -->
+        <tr> <!-- Linha do produto: iPad -->
+            <td>iPad</td> <!-- td = "table data". Os dados das colunas do corpo da tabela. -->
+            <td>3289,00</td>
+            <td>5</td>
+            <td>16445,00</td>
+        </tr>
+        <tr> <!-- Linha do produto: Samsung S9 -->
+            <td>Samsung S9</td>
+            <td>2649,00</td>
+            <td>8</td>
+            <td>21192,00</td>
+        </tr>
+    </tbody>
+    <tfoot><!-- tfoot = "table footer". Rodapé da tabela. -->
+        <tr>
+            <td colspan="3" rowspan="2">Total</td> <!-- colspan: Propriedade usada para definir quantas colunas o "td" ira ocupar na tabela. -->
+            <td>37637,00</td>
+        </tr>
+    </tfoot>
+</table>
+
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px; /* Deixa com espaço entre os elementos */
+    }
+
+    /* Aplicar mudanças no tr que está dentro do thead apenas */
+    thead tr {
+        border-bottom: solid 3px #444; /* Estilo, largura e cor da borda de baixo do tr */
+    }
+
+    /* Aplicar mudanças no tr que está dentro do tbody apenas */
+    /* hover = significa q só aparecerar quando o mouse passar por cima. */
+    tbody tr:hover {
+        background-color: #dedede; /* Altera o background quando o mouse passa por cima. */
+    }
+
+    tfoot {
+        background-color: #444;
+        color: #fff;
+        font-weight: bold; /* Deixa a fonte em negrito. */
+    }
+
+    /*Para caso eu querer alinhar um texto no centro:
+    tfoot td {
+        text-align: center;
+    }*/
+</style>

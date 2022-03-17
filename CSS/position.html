@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Position</title>
+    <style>
+        div {
+            color: #fff;
+            font-size: 60px;
+            padding: 30px;
+            border: solid 5px #222;
+        }
+
+        .static {      /* Position: static é o padrão do css */
+            top: 100px;
+            left: 100px; /* As propriedades top e lef não terão efeito sobre o elemento uma vez que o position static faz com que elas não sejam consideradas. */
+            background-color: steelblue;
+        }
+
+        .fixed {
+            position: fixed; /* "Fexed" pq deixa o elemento fixo na pagina mesmo quando ela é rolada para baixo. */
+            bottom: 30px;
+            right: 0px;    /* Leva em consideração o bottom e right diferente da position padrão (static) */
+            background-color: tomato;
+        }
+
+        .relative1 {
+            position: relative; /* Tem um posicionamento relativo ao elemento anterior e ao posicionamento padrão e não absoluto. */
+            left: 50px;
+            top: 5px; /* Ficará à 5px do elemento anterior, já q é relativo à ele. */
+            background-color: seagreen;
+        }
+
+        .absolute1{
+            position: absolute; /* Toma um posicionamento absoluto na pagina independente de qualquer outro elemento. */
+            /* A diferença dele pro fixed, é q ele não acompanha o scroll da pagina, fica totalmente absoluto. */
+            left: 350px;
+            top: 120px;
+            background-color: violet;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="static">Static (Padrão)</div>
+    <div class="fixed">Fixed</div>
+    <div class="relative1">Relative</div>
+    <div class="absolute1">Absolute</div>
+
+    <div class="relative2">
+        <div class="absolute2"></div>
+    </div>
+
+    <div class="sticky">Sticky</div>
+    <p style="padding-bottom: 2000px;">Opa</p>
+</body>
+
+</html>

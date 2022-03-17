@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Anatomia CSS</title>
+    <style>
+        .selector {
+            color: #fff;
+            font-size: 30px;
+            text-align:center;
+            /* Multiplos valores */
+            border: solid 4px navy;
+            font-family: Helvetica, monospace ; /* Alternancia de valores (Se não tiver a primeira fonte especificada, ele usará a segunda ("monospace")) */
+            /* Funções */
+            width: calc(100% - 100px);
+            background-color: rgb(34, 153, 189);
+        }
+
+        /* Usando uma pseudo-classe */
+        .selector:hover{ /* Propriedades aplicada ao componente quando o mouse passar por cima */
+            background-color: orangered;
+        }
+
+        /* Usando pseudo-elemento */
+        .selector::first-letter { /* Aplica um estilo em uma especifica parte do elemento (no caso, na primeira letra) */
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="selector">Conteúdo</div>
+</body>
+
+</html>

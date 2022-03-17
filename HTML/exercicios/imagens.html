@@ -1,0 +1,83 @@
+<h1>Imagens</h1>
+
+<!-- Vou colocar as imagens dentro de uma tag "P"(parágrafo) -->
+<p>
+    <!-- "alt" é usado como alternativa caso a página não consiga renderizar/exibir a mensagem originalmente passada. -->
+    <!-- widht height -> Altura Largura -->
+    <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" 
+    alt="Muro da Cidade"
+    width="513" height="342"
+    title="Muro da Cidade por Tarso Bessa"> 
+</p>
+
+
+<!-- Arquivo GIF -->
+<!-- Não é exatamente necessario colocar a altura e largura juntas, pode ocasionar uma deformação na midia não desejada. -->
+<p>
+    <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" 
+    alt="Intro Cod3r"
+    height="342">
+</p>
+
+
+<!-- Imagem em .png -->
+
+<p class="circular">
+    <img src="http://files.cod3r.com.br/curso-web/imagem3.png"
+     alt="Rio de Janeiro"
+     height="342">
+</p>
+
+<style>
+    /*Caso queira adicinar um background à imagem .png
+    .circular {
+        width: 513px;
+        background-color: #444;
+    }*/
+</style>
+
+<!-- Imagem junto de um texto -->
+<p class="texto">
+    <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" 
+    alt="Avatar"
+    height="50" align="left"> <!-- "align" = Propriedade usada para dar alinhamento do texto com a imagem. Caso nn tivesse, o texto iria começar na ponta da imagem. -->
+    Texto asjdnlj çalsdçlasd asçdklmaidfk dfpasmkfkmsaklçfm kMFKÇLMSFMK M KMlksfmLKFMf  KMkfmk
+</p>
+
+<p class="cidade"></p>
+
+<style>
+
+    .texto {
+        width: 400px; /* "Largura" = Para que o texto "envolva" a imagem. */
+    }
+
+    .texto img /* Dentro da classe "texto" na tag "img" */ {
+        margin-right: 10px;
+    }
+
+    /* Aplicando uma imagem a partir do CSS e não de uma tag "img" */
+    .cidade {
+        width: 513px; /* Largura */
+        height: 342px; /* Altura */
+        background-image: url("http://files.cod3r.com.br/curso-web/imagem4.jpg"); /* elemento do CSS que aplica imagens */
+        background-position: center;
+        background-repeat: no-repeat; /*Dependendo do tamanho da imagem ele pode acabar repetindo pros lados ou pra cima*/
+        background-size: 200%; /* Dá um zoom no background de 200% */
+    }
+
+</style>
+
+
+<!-- Lista de imagens condicionais -->
+<!-- Normalmente é usado para adaptar páginas à navegadores de celular. Como a imagem de cima é maior que 600px, a página irá mostrar a próxima imagem disponivel na tag "picture". -->
+<p>
+    <picture>
+        <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png"
+        media="(min-width: 600px)"><!-- Só será exibida se o tamanho for no minimo 600pixels, abaixo disso, a logo não irá aparecer.-->
+                                       <!-- ("media" é uma propriedade condicional.) -->
+
+        <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="Logo"> <!-- Em último caso (se o tamanho for -->
+                                                         <!-- de fato menor que 600px), essa imagem que será renderizada.  -->
+    </picture>
+</p>

@@ -1,0 +1,51 @@
+<h1>Tags Não Visuais</h1>
+
+<!-- 
+Tags Semânticas...
+
+section - Agrupamento temático de conteúdo
+article - Onteudo auto-contido (tem um começo, meio e fim próprio)
+header - cabeçalho do documento
+footer - rodapé do documento
+nav - agrupa os links de navegação
+aside - um campo que fica do lado da página
+details - exibe detalhes que pode ser exibidos ou escondidos
+
+As Famosas...
+
+div - divisao ou seção
+span - usado para agrupar elementos inline
+-->
+
+<!-- 
+    Display = block (ocupa toda a linha da página) - Display de uma div
+    Display = inline (ocupa apenas seu espaço na página) - Display de um span
+
+    São as principais diferenças entre div e span
+-->
+
+<div>Área 1</div>
+
+<div>Área 2</div> <!-- Por padrão, as divs tem seu display definido em "block". Ou seja, ocupa toda a linha da pagina. -->
+
+<p>
+    <!-- Por padrão, os spans tem seu display definido como "inline". Ou seja, ocupa apenas seu proprio espaço na linha.. -->
+    Esse é um texto com <span class="diferente">muitas palavras</span> e ponto.
+</p>
+
+<style>
+    div {
+        display: inline;
+    }
+
+    span {
+        display: block;
+    }
+
+    .diferente {
+        font-weight: bold;
+        font-size: 30px;
+        color: chocolate;
+    }
+</style>
+

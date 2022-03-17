@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+    <!-- Filhos de elementos podem herdar atributos aplicados no elemento pai. Como a "font-family"  -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Herança</title>
+    <style>
+        
+        body {
+            font-family: monospace; /* Atribudo q passa com herança */
+            font-size: 40px;
+            border: solid 3px red; 
+            padding: 50px; /* Atributo que não passa como hernaça */
+        }
+
+        div {
+            border: inherit; /* in herit = "em herança". Faz com que o elemento herde o atributo declarado no elemento pai */
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Herança</h1>
+    <div>Estou herdando</div>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!-- Nesse exemplo eu uso uma lista aninhada como representação de uma organização de pastas -->
+
+<h1>Projeto</h1>
+<ul class="tree"> <!-- "Unordered List" -->
+     <li> <!-- "List Item" -->
+         <a href class="motherClass">Backend</a>
+         <ul> <!-- Uma lista não ordenada (unordered list) dentro de outra lista. (Representação de uma lista aninhada) -->
+             <li>
+                 <a href class="motherClass">app</a>
+                 <ul>
+                     <li>produto.js</li>
+                     <li>usuario.js</li>
+                     <li>venda.js</li>
+                 </ul>
+             </li>
+             <li>
+                 <a href class="motherClass">config</a>
+                 <ul>
+                     <li>banco.js</li>
+                     <li>rotas.js</li>
+                     <li>servidor.js</li>
+                 </ul>
+             </li>
+         </ul>
+         <li>
+             <a href class="motherClass">Frontend</a>
+             <ul>
+                 <li>
+                     <a href class="motherClass">public</a>
+                     <ul>
+                         <li>app.css</li>
+                         <li>app.css</li>
+                         <li>index.html</li>
+                     </ul>
+                 </li>
+             </ul>
+            </li>
+     </li>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css"> <!-- Chamando uma página .css para aplicar um estilo na lista -->
+
+<!-- Tenho que bolar um jeito de fazer essa arvore de itens contrair e abrir quando clicados -->
+<script>
+    document.querySelectorAll('.motherClass').forEach(element => {
+        element.onclick = (event) => {
+            event.preventDefault()
+
+            const ul = element.nextElementSibling  //Pega o proximo elemento depois de "element" (o ul no caso)
+            const display = ul.style.display
+            ul.style.display = display === 'none' ? 'block' : 'none'  //Mostra e esconde o display do ul
+        }
+    })
+</script>

@@ -1,0 +1,105 @@
+<h1>Imagens</h1>
+
+<div wm-slides>
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" 
+        alt="Muro da Cidade"
+        width="513" height="342"
+        title="Muro da Cidade por Tarso Bessa"> 
+    </p>
+    
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" 
+        alt="Intro Cod3r"
+        height="342">
+    </p>
+    
+    <p class="circular">
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png"
+         alt="Rio de Janeiro"
+         height="342">
+    </p>
+
+    <p class="texto">
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" 
+        alt="Avatar"
+        height="50" align="left"> <!-- "align" = Propriedade usada para dar alinhamento do texto com a imagem. Caso nn tivesse, o texto iria começar na ponta da imagem. -->
+        Texto asjdnlj çalsdçlasd asçdklmaidfk dfpasmkfkmsaklçfm kMFKÇLMSFMK M KMlksfmLKFMf  KMkfmk
+    </p>
+    
+    <p class="cidade"></p>
+    
+    <p>
+        <picture>
+            <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png"
+            media="(min-width: 600px)">
+            <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="Logo">
+        </picture>
+    </p>
+</div>
+
+<script>
+    //debugger
+    // Função para que o elemento se mova da direita para esquerda
+    function move (elem, inicio, fim, intervalo, callback) {
+        const novoInicio = inicio - intervalo //Inicio do trajeto (1500px) menos o intervalo (5px) fazendo com que se mova
+        if (novoInicio >= fim) { // Se o elemento não tiver chegado no final ainda, abre o laço
+            elem.style.left = novoInicio + 'px' //Elemento recebe a mesma posição menos o intervalo de pixels
+            setTimeout(()=>{move(elem, novoInicio, fim, intervalo, callback)}, 5) //Repete o movimento em um intervalo de 5 milisegundos
+        }
+        else{
+            callback() //Callback disparado quando o movimento chega ao fim
+        }
+    }
+
+    const elementos = document.querySelectorAll('p')
+    const img = Array.from(elementos)  // Transforma a lista de nodeObjects em um array
+    const max = img.length
+    var index = 0
+    
+    async function slides() {
+        img[index].style.display = await 'block' // Deixa o display visívle para a imagem a ser movimentada
+        const inicio = innerWidth //Pega o valor correspondente à largura da página
+        const fim = -img[index].clientWidth //Pega o valor correspondente à largura do elemento/da imagem.
+        move(img[index], inicio, fim, 5, () => {
+            img[index].style.display = 'none';
+            index++;
+            index =  index == 6? 0 : index
+            slides()
+        })
+    }
+
+    slides()
+
+</script>
+
+<style>
+
+    p {
+        position: absolute;
+        display: none;
+    }
+
+    .circular {
+        width: 513px;
+        background-color: #444;
+    }
+
+    .texto {
+        width: 400px; /* "Largura" = Para que o texto "envolva" a imagem. */
+    }
+
+    .texto img /* Dentro da classe "texto" na tag "img" */ {
+        margin-right: 10px;
+    }
+
+    .cidade {
+        width: 513px; /* Largura */
+        height: 342px; /* Altura */
+        background-image: url("http://files.cod3r.com.br/curso-web/imagem4.jpg"); /* elemento do CSS que aplica imagens */
+        background-position: center;
+        background-repeat: no-repeat; /*Dependendo do tamanho da imagem ele pode acabar repetindo pros lados ou pra cima*/
+        background-size: 200%; /* Dá um zoom no background de 200% */
+    }
+
+</style>

@@ -1,0 +1,24 @@
+<!-- Estilo de CSS interno, externo e inline. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Origem CSS: Externo, Interno e Inline</title>
+    <style>
+
+        body {
+            background-color: aquamarine;
+        }
+    </style>
+    <link rel="stylesheet" href="css/externo.css"> <!-- Um linl com relação à um stylesheet(folha de estilo) -->
+<!-- A prioridade do estilo aplicado está na ordem de processamento. Como o link externo foi o ultimo estilo processado, ele é quem será aplicado. -->
+
+</head>
+
+<body style="background-color: coral;"> <!-- Estilo de CSS inline -->
+    <h1>E agora?</h1>
+</body>
+
+</html>

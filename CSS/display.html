@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Display</title>
+    <style>
+        body {
+            font-size: 40px;
+            color: #fff;
+            background-color: coral;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        div {
+            background-color: seagreen;
+        }
+
+        span {
+            background-color: dodgerblue;
+        }
+
+        li {
+            background-color: purple;
+        }
+
+        div, span, li {
+            width: 50%; /* "Largura". */
+            width: 200px;
+            height: 80px; /* "Altura". */
+            padding-top: 30px;
+            text-align: center; /* Alinha o texto na parte central */
+            display: block; /* Display block faz com que cada elemento tenha sua própria linha. */
+            display: inline; /* Display inline faz com que os elementos dividem a mesma linha. Não considera altura e largura.*/
+            display: inline-block; /* Faz o mesmo que o display inline (compartilhamento da mesma linha), porém agora considerando
+                                      também as propriedades de altura e largura. */
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>Texto 1</div>
+    <span>Texto 2</span>
+    <span>Texto 3</span>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+</body>
+
+</html>

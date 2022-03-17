@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Unidades #01</title>
+    <style>
+        /* 
+        Unidades de medidas: 
+
+         - ABSOLUTOS
+            ° Px: Medida em pixels em função da tela que será vista (mais usada)
+            ° Cm: Medida em centimetros (Não aconselhado o uso)
+            ° Mm: Medida em milimetros (Não aconselhado o uso)
+
+         - VIEWPORT
+            ° Vh: Medida em porcentual da altura da tela (Vh: 50 -> Espaçamento de 50% de altura da tela)
+            ° Vw: Medida em porcentual da largura da tela (Vw: 50 -> Espaçamento de 50% da largura da tela)
+            ° Vmin: Medida em porcentual da menor dimensão da página (Se a página tiver (X=500px; Y:250px), então Vmin: 20 -> Ocupa 20% da dimensão Y da pág)
+            ° Vmax: Medida em porcentual da maior dimensão da página (Se a página tiver (X=500px; Y:250px), então Vmax: 20 -> Ocupa 20% da dimensão X da pág)
+
+         - FONT
+            ° Rem : Tamanho em porcentual relativo ao tamanho da taíz da página (body). (Se body tiver o tamanho de 500px, então Rem: 50% -> Ocupa 250px, ou seja, 50% do tamanho do body)
+            ° em : Tamanho em porcentual relativo ao tamanho do elemento pai (elemento mais próximo superior). (Se o elemento pai tiver o tamanho de 500px, então em: 50% -> Ocupa 250px, ou seja, 50% do tamanho do pai)
+        */
+
+        .unidades-absolutas {
+            position: absolute; /* Usando só pq algumas unidades requerem uma propriedada absoluta dos elementos. */
+            font-size: 40px;
+            padding: 20px;
+            border: solid 5px #222;
+            margin: 30px;
+            width: 4cm;
+            height: 20mm;
+            top: 150px; /* Distância do topo do página pra div de 150 pixels */
+            left: 200px; /* Só aplicou o top e left por causa do attr absolute */
+        }
+
+        .unidades-relativas {
+            position: absolute;
+            font-size: 4em; /* Tamanho relativo ao elemento pai (4 vezes maior q o tamanho padrão)*/
+            padding: 5%;
+            border: solid 1vw #222;
+            margin: .8%;
+            width: 20vw;
+            height: 15vh;
+            bottom: 5%;
+            right: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="unidades-absolutas">Opa!</div>
+    <div class="unidades-relativas">Epa!</div>
+</body>
+
+</html>
