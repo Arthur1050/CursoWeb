@@ -19,7 +19,7 @@
         }
 
         .fixed {
-            position: fixed; /* "Fexed" pq deixa o elemento fixo na pagina mesmo quando ela é rolada para baixo. */
+            position: fixed; /* "Fixed" pq deixa o elemento fixo na pagina mesmo quando ela é rolada para baixo. */
             bottom: 30px;
             right: 0px;    /* Leva em consideração o bottom e right diferente da position padrão (static) */
             background-color: tomato;
@@ -38,6 +38,31 @@
             left: 350px;
             top: 120px;
             background-color: violet;
+        }
+
+        .relative2 {
+            position: relative;
+            left: 250px;
+            top: 2000px;
+            width: 200;
+            height: 200px;
+            background-color: slategrey;
+        }
+
+        .absolute2 {
+            position: absolute; /* Esse elemento se posicionara de maneira absoluta dentro do elemento pai DESDE QUE O ELEMENTO PAI NÃO TENHA O POSITION STATIC (PADRÃO). */
+            left: 10px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: orange;
+        }
+
+        .stick {
+            position: -webkit-sticky; /* Safari */
+            position: sticky;
+            background-color: #777;
+            top: 0px /* Irá grudar à 0px da tela de rolagem quando for o caso. */
         }
 
     </style>

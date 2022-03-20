@@ -12,6 +12,29 @@
             border: solid 5px;
             display: none;
         }
+
+        /* Blocos no CSS de forma condicional que executa o que está dentro deles de acordo com o que é declarado nos parametros. */
+
+        /* Um tipo de laço condicional */
+        @media (max-width: 600px) {
+            .muito-pequeno {
+                display: block;  /* Se a largura da página for menor ou igual à 600px, o elemento da classe em questão irá aparecer. */
+            }
+        }
+
+        /* Um tipo de laço condicional com um "ou" */
+        @media (max-width: 1000px), (orientation: portrait) {
+            .pequeno-retrato {display: block;}  /* Exibe o elemento em questão caso a largura da página for menor ou igual a 1000px ou então se a orientação dela for de retrato.
+            O caso contrario de portrait seria se a orientation fosse landscape (paisagem). */
+        }
+
+        /* Tipo de laço condicional com "and"/"e" */
+        @media (min-width:500px) and (max-width: 1000px) {
+            .intervalo {
+                display: block;  /* Dessa vez, a largura da página tem q ser maior que 500px e menos que 1000px para que o elemento em questão apareça. */
+            }
+        }
+
     </style>
 </head>
 <body>
