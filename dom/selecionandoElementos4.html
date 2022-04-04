@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #04</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <p>Início</p>
+    </div>
+    <div>
+        <ul>
+            <li>Pedro</li>
+            <li>Ana</li>
+            <li>Bia</li>
+        </ul>
+    </div>
+    <div>
+        <p>Fim</p>
+    </div>
+    <script>
+        function log() {
+            console.log(this)
+        }
+
+        /* Adicionando o função 'log' (q acabei de criar) aos elementos para facilitar a vida*/
+        HTMLCollection.prototype.log = log
+        HTMLElement.prototype.log = log
+        NodeList.prototype.log = log
+        Node.prototype.log = log
+
+        const lista = document.querySelector('div ul')
+        lista.parentNode.log() /* Posso usar assim já que adicionei essa função ao prototype do nodelist. */
+        /* Um jeito alternativo seria fazer 'console.log(lista.parentNode)' caso eu nn tivesse criado e adicionado o prototype log antes */
+        lista.parentNode.log() /* 'parentNode' pega o pai do elemento selecionado. Nesse caso, o pai do ul (uma div) */
+        lista.childNodes.log() /* Retorna um nodeList com os filhos do elemento 'ul' (mas tbm pega os 'texts' dos espaçamentos entre as tags)*/
+
+        const primeiro = lista.firstChild /* Pega o primeiro filho do elemento */
+        primeiro.log()
+        primeiro.nextSibling.log() /* Mostra o elemento irmão (que vem logo depois dele) do 'primeiro'. Mostra o 'li' */
+
+        const ultimo = lista.lastChild /* Pega o ultimo elemento filho */
+        ultimo.log() /* 'Text' */
+        ultimo.previousSibling.log() /* Parecido com o nextSibling, mas q pega o irmão que vem antes dele */
+
+        lista.children.log() /* Pega somente os elementos filhos (li), sem os 'texts' no meio. */
+        lista.firstElementChild.log() /* Pega o primeiro elemento de fato dentro da lista e desconsidera os texts */
+        lista.lastElementChild.log() /* Pega o ultimo elemento de fato dentro da lista e desconsidera os texts */
+        /* Misturando as funções*/
+        lista.parentNode.previousElementSibling.log() /* Pega o elemente anterior ao elemento pai da 'lista' */
+        lista.parentNode.nextElementSibling.log() /* Pega o elemente posterior ao elemento pai da 'lista' */
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <a href='https://www.cod3r.com.br'>Cod3r</a>
+    </div>
+    <div id='primeiro'>
+        <img src='http://files.cod3r.com.br/curso-web/logo-estreita.png' alt='logo'>
+    </div>
+    <script>
+        const img = document.querySelector('img')
+        console.log('getAttribute', img.getAttribute('src')) /* getAttribute pega um atributo de acordo com a propriedade passada como parametro. */
+        console.log('src', img.src) /* Outra forma de pegar o atributo, passando a propriedade depois do ponto do elemento */
+        console.log('["src"]', img['src']) /* Outra maneira de fazer o mesmo */
+        console.log('alt', img.alt) /* Pega o atributo da propriedade 'alt' também do elemento 'img' */
+
+        /* Agora pegando atributos que estão implicitos(não aparecem). */
+        console.log('Elemento "img"...............')
+        console.log('NodeType', img.nodeType) /* re: "1" */
+        console.log('NodeName', img.nodeName) /* re: "IMG" */
+
+        const src = img.getAttributeNode('src') /* Ao contrario do getAttribute(), o getAttributeNode() pega o "No" do atributo, que contem mais informação. */
+        console.log('Atributo "src"...............')
+        console.log('NodeType', src.nodeType) /* re: "2" */
+        console.log('NodeName', src.nodeName) /* re: "src" */
+        console.log('NodeValue', src.nodeValue) /* re: url dentro da propriedade "src" */
+
+        const link = document.querySelector('a')
+        console.log('Elemento "a"............')
+        console.log('href', link.href) /* re: o link */
+        console.log('firstChild.nodeType', link.firstChild.nodeType)/* Ver o tipo de no do filho do elemento link. re: "3" */
+        link.firstChild.nodeValue = 'Novo Text' /* Altera o valor do filho (no caso o texto) inserindo outro texto */
+        link.text = 'Novo texto denovo' /* Forma mais resumida do que foi feito acima */
+    </script>
+</body>
+
+</html>

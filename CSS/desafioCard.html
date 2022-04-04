@@ -5,7 +5,71 @@
     <meta charset="UTF-8">
     <title>Desafio Card</title>
     <style>
-        /* ... */
+        * {
+            font-family: 'Roboto', sans-serif;
+            box-sizing: border-box;
+        }
+
+        .curso {
+            position: relative;
+            display: inline-block;
+            width: 350px;
+            height: 100%;
+            box-shadow: 0 0 1em rgba(0, 0, 0, 0.479);
+            transition: 0.3s;
+        }
+
+        .curso:hover {
+            width: 375px;
+            height: 110%;
+        }
+
+        .curso img {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .containner {
+            height: 360px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .curso-preco {
+            position: absolute;
+            float: right;
+            bottom: 0px;
+            right: 0px;
+            padding: 10px;
+        }
+
+        .preco-por {
+            color: green;
+            font-weight: 800;
+            font-size: 1.75em;
+        }
+
+        .preco-de {
+            color: rgb(170, 47, 47);
+            font-weight: 650;
+            font-size: 1.3em;
+            text-decoration: line-through;
+        }
+
+        .curso-info h4 {
+            font-size: 1.2em;
+            padding: 0px 10px 0px 10px;
+            margin-bottom: 17px;
+            font-weight: 300;
+            font-size: 1.3em;
+        }
+
+        .curso-info p {
+            padding-left: 10px;
+            font-weight: 500;
+        }
+
     </style>
 </head>
 
@@ -16,7 +80,7 @@
     <img src="http://files.cod3r.com.br/curso-web/card.png" height="340" alt="Objetivo">
 
     <h2>Resultado</h2>
-    <div>
+    <div class="containner">
         <div class="curso">
             <img src="http://files.cod3r.com.br/curso-web/curso1.jpg" />
             <div class="curso-info">
@@ -40,6 +104,7 @@
             </div>
         </div>
     </div>
+    <p style="padding-top: 400px;">end</p>
 </body>
 
 </html>

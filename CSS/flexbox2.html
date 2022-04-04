@@ -6,7 +6,48 @@
     <title>Flexbox #02</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        .flex-container div {
+            margin: 0px;
+        }
+        
+        .flex-container {
+            display: flex;
+            height: 300px;
+            width: 600px;
+        }
+
+        .flex-container div:nth-child(3) { /* Aplica uma propriedade para o terceiro filho dentro do flex container */
+            background-color: indianred;
+            order: 1; /* Order manipula a ordem de um flex-item dentro de um flex-box. Por padrão, ele é 0 */
+            /* Alinhamento de flex items */
+            align-self: center; /* Alinha um flex item em especifico dentro do flexbox */
+            align-self: flex-end;
+            align-self: flex-start;
+            align-self: stretch; /* Valor padrão */
+        }
+
+        .flex-container div {
+            width: 100px;
+            flex-grow: 0; /* Valor padrão | Muda nada.*/
+            flex-grow: 1; /* Altera a largura dos flex items de forma que façam o caber completamente dentro do flex-box. Tipo um strech só que no sentido do main axis */
+
+        }
+
+        .flex-container div:nth-child(1) {
+            flex-grow: 2; /* Recebe um peso 2 que é maior que os demais flex items q possuem apenas o peso 1, e consequentemente ocupara um maior espaço dentro do flex box */
+        }
+
+        .flex-container {
+            width: 300px;
+        }
+        
+        .flex-container div {
+            flex-shrink: 3; /* Faz o inverso do felx grow. Ao invés de aumentar, ele encolhe */
+        }
+
+        .flex-container div:nth-child(1) {
+            flex-shrink: 5; /* Seguindo a lógica de pesos do flex grow, quato maior o peso no flex shrink, mais encolhido é o flex item dentro do flex box. */
+        }
     </style>
 </head>
 

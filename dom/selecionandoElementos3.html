@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #03</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        form input,
+        form select,
+        form button {
+            margin: 10px;
+            font-size: 1.6em;
+        }
+    </style>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Formulário</h1>
+    <form name="pesquisa" action="http://www.google.com.br/search">
+        <input type="text" name="q" placeholder="Digite o termo...">
+        <select name="hl">
+            <option value="pt-br">Português (Brasil)</option>
+            <option value="en-us">Inglês (Americano)</option>
+        </select>
+        <button>Pesquisar</button>
+    </form>
+    <script>
+        console.log(document.forms) /* Pega todos os forms do documento e armazena em um HTMLCollection. */
+        console.log(document.forms[0]) /* Pega o form de índice 0 */
+        console.log(document.getElementsByName('pesquisa')) /* Pega um elemento pelo name da tag (Em NodeList) */
+        /* E uma maneira ainda mais pratica */
+        console.log(document.pesquisa) /* Pega um documento com o nome 'pesquisa' (no caso, o form). */
+        console.log(document.pesquisa.q) /* Pega elementos dentro do formularia através do name */
+        /* Alterando o texto/valor do input que está dentro do formulario: */
+        document.pesquisa.q.value = 'Linux Brasil'
+        /* Fazendo o mesmo com o input do select */
+        document.pesquisa.hl.value = 'en-us'
+    </script>
+</body>
+
+</html>

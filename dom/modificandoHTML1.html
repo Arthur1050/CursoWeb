@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <script>
+        const body = document.querySelector('body')
+
+        const div1 = document.createElement('div') /* Cria o elemento 'div1' */
+        div1.classList.add('destaque') /* Adiciona uma classe ao elemento recém criado */
+        div1.innerHTML = 'Terceiro' /* Adiciona um conteudo dentro do elemento recém criado */
+
+        const div2 = document.createElement('div')
+        div2.setAttribute('wm-atributo', 'valor') /* Cria um novo atributo "wm-atributo" e atribui a ele o valor "valor" */
+        div2.innerHTML = 'Segundo'
+
+        const p = document.createElement('p') /* Cria um elemento do tipo paragrafo */
+        p.innerHTML = 'Terceiro'
+        const div3 = document.createElement('div')
+        div3.appendChild(p) /* Anexa ("append") o novo filho ("Child") "p" no elemento recém criado "div3" */
+
+        body.appendChild(div1) /* Anexa a div recém criada no body, fazendo com que apareça na página. */
+        body.appendChild(div2)
+        body.appendChild(div3) /* Adiciona a div3 e seu filho "p" */
+
+        const text = document.createTextNode('Antes...') /* Cria um elemento q é somente texto, sem tag nem nada */
+        div3.insertBefore(text, div3.childNodes[0]) /* Também adiciona filhos ao elemento igual o "appendChilld()", mas esse adiciona o filho em uma posição especifica */
+        /* No caso acima, foi adicionado o elemento "texto" antes("before") do primeiro filho, ou seja, do filho de índice 0 */
+
+        const div4 = div3.cloneNode(true) /* Cria a div4 clonando a div3. O parametro "true" faz com que seja clonado todos os seus filhos também */
+        body.appendChild(div4)
+        body.removeChild(div3) /* Remove o childNode div3 do elemento body */
+    </script>
+</body>
+
+</html>

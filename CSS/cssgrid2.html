@@ -20,6 +20,32 @@
             border: solid 5px dodgerblue;
             background: #fff;
         }
+
+        body {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /* 3 colunas divididas uniformemente. */
+            grid-template-rows: repeat(3, 1fr); /* Mesma lógica q a de cima. */
+            /* Dando nome as linhas */
+            grid-template-columns: [inicio] 1fr [metade-1 meio-1] 1fr [metade-2 meio-2] 1fr [fim]; /* Dá pra renomear as linhas, declarando o nome delas entre colchetes antes de declarar seus valroes. */
+
+            /* É possivel tbm aplicar gaps entre as celulas da grid-box. */
+            column-gap: 20px; /* Espaçamento de 20px entre as colunas */
+            row-gap: 20px; /* Espaçamento de 20px entre as linhas */
+            /* 50px de gap nas linhas e 10px de gap nas colunas */
+            gap: 50px 10px; /* Forma resumida de dar gap nas colunas e linhas simultaneamente. */
+            gap: 10px; /* Gap de 10px tanto nas linhas quanto nas colunas. */
+        } 
+
+        .d1 {
+            grid-column-start: metade-2;
+            grid-column-end: fim; /* O item do grid box vai começar e terminar nas linha já nomeadas a cima */
+            grid-column: meio-1 / fim; /* Forma mais resumida de declarar as duas propriedades à cima em uma só. */
+            grid-row: 1 / span 2; /* Mesma lógica do de cima, só q nos rows */
+            /* Maneira de resumir mais ainda, é usando o grid-area */
+            /* row-star column-star row-end column-end */
+            grid-area: 1 / meio-1 / span 3 / fim; /* Começa da linha 1 e pula 3 linhas. Começa da coluna "meio-1" e vai até o "fim". */
+        }
+
     </style>
 </head>
 

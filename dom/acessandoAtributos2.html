@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <label for="compras">Compras</label>
+        <ul id="compras" destino='escritório' data-urgencia="5">
+            <li>Café</li>
+            <li>Água</li>
+            <li>Copo Descartável</li>
+        </ul>
+    </div>
+    <script>
+        const lista = document.querySelector('div ul[destino="escritório"]') /* seleciona dentro de uma div uma ul que contem um attr 'destino' que recebe o valor "escritorio" (SUPER ESPECIFICO) */
+        console.log('Elemento "ul"............')
+        console.log('ChildNodes', lista.childNodes) /* Lista todos os filhos do elemento "lista" */
+        console.log('id', lista.id) /* Acesso o atributo do elemento a partir da notação ponto */
+        console.log('destino', lista.destino) /* ERROR: 'destino' é uma propriedade personalizada, logo nn dá para acessar pela notalção ponto */
+        console.log('getAttribute', lista.getAttribute('destino')) /* Forma correta de acessar uma propriedade personalizada */
+        console.log('hasAttribute', lista.hasAttribute('destino')) /* Metodo para saber se um attr está ou não em determinado elemento */
+        lista.setAttribute('destino', 'empresa') /* Seta um novo valor à propriedade destino */
+        lista.setAttribute('status', 'aberto') /* Cria o attr 'status' e o seta como 'aberto' */
+        lista.removeAttribute('destino') /* Apaga o atributo 'destino' */
+        console.log(lista.dataset) /* Lista os atributos com prefixo "data-" no elemetno lista */
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #02</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
+    <script> 
+    /* CURIOSIDADE! */     
+    /* Ao contrario da função 'getEllementBy...()', o 'querrySelectorAll()' retorna um NodeList, e não um HTMLCollection. */
+    /* Por isso é possível usar o 'forEach()' no resultado da função do queryselectorAll. */
+    /* Porém, ainda assim há limitações. Por isso segue a indicação de converter o resultado em uma lista array dependendo do caso.  */        
+
+        document.querySelector('#primeiro').classList.add('destaque') 
+
+        const selecionar = (seletor) => {
+            document.querySelectorAll(seletor).forEach( e => { e.classList.add('destaque') })
+        }
+        const deselecionar = (seletor) => {
+            document.querySelectorAll(seletor).forEach(e => {e.classList.remove('destaque')})
+        }
+
+        selecionar('div') /* Seleciona todos da tag div */
+
+        deselecionar('*') /* É possível passar um seletor universal */
+        selecionar('.terceiro.ultimo') /* Seleciona todos q tem a classe terceiro e ultimo no mesmo elemento */
+
+        deselecionar('*')
+        /* É possível também passar pseudo-classes */
+        selecionar(':not(#primeiro)') /* Seleciona todos os elementos que NÃO tem o id "primeiro" */
+
+        deselecionar('*')
+        selecionar(':nth-child(1)') /* Seleciona o primeiro 'filho' de todos os elementos */
+
+        deselecionar('*')
+        selecionar('div:nth-of-type(1)') /* Pega o primeiro elemento que aparecer do tipo 'div' */
+
+        deselecionar('*')
+        selecionar('[wb-attrib]') /* Seleciona um elemento a partir do atributo (attrib) */
+
+        /* Formas de transformar os querryselectorall em array instantaneamente */
+        const divsArray1 = Array.from( document.querySelectorAll('div') )
+        /* OU */
+        const divsArray2 = [...document.querySelectorAll('div')]
+    </script>
+</body>
+</html>

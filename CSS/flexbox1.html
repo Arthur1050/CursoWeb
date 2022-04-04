@@ -6,7 +6,48 @@
     <title>Flexbox #01</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        .big {
+            font-size: 1.5em;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: column; /* Por padrão, ele é row */
+            flex-direction: column-reverse; /* Coluna invertida */
+            flex-direction: row-reverse; /* Row invertida e do lado direito, tipo um 'float: right;' */
+            flex-direction: row;  /* Padrão */
+
+            width: 50%; /* Alguns itens continuam na linha e ficam pra fora */
+            flex-wrap: wrap; /* Quebra de linha */
+            flex-wrap: wrap-reverse; /* Quebra de linha invertida */
+            flex-flow: row wrap; /* Faz a mistura do flex direction com o flex wrap */
+            height: 200px;
+            flex-flow: column-reverse wrap; /* Uma coluna invertida que quebra de linha quando chega no topo */
+            flex-flow: row wrap;
+
+            /* Alinhamento Main Axis (linha principal) */
+            justify-content: flex-start; /* Justyfy-contente trabalha com main axis (linha principar) e, nesse caso ele está justificando os elementos no começo da linha principal.*/
+            justify-content: flex-end; /* Posiciona os itens no fim da linha principal (lado direito do flex-box / ponta direita do main axis) */
+            justify-content: center; /* Centraliza os itens no main axis (linha principal) */
+            justify-content: space-around;  /* Distribui de maneira uniforme os itens pela main axis. */
+            justify-content: space-between; /* Faz uma distribuição de itens também de maneira uniforme porém sem espaço nas pontas do eixo. */
+
+            /* Alinhamento Cross Axis (linha secundaria / contrária) */
+            height: 400px;
+            align-items: stretch; /* Valor padrão | Estica os elementos nos sentido Cross axis (sentido oposto do main axis)*/
+            align-items: baseline; /* Alinha os items pela linha de base das fontes */
+            align-items: flex-start; /* Alinha no início do sentido do cross axis */
+            align-items: flex-end; /* Faz o oposto do flex start */
+            align-items: center; /* Centraliza os itens no eixo do cross axis */
+
+            /* Mais de uma linha no sentido mains axis */
+            align-content: flex-start; /* Todas as linhas vão para o inicio do flex box */
+            align-content: flex-end; /* O contrario do flex start */
+            align-content: center; /* Centraliza as linhas dentro do flex box */
+            align-content: space-around; /* O mesmo que no justify só que afetando as linhas */
+            align-content: space-between;
+        }
+
     </style>
 </head>
 

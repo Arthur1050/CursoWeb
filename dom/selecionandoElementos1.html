@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    <script>              
+        /* Forma de selecionar elementos a partir da DOM */
+        document.getElementById('primeiro').classList.add('destaque') /* Pega um elemento a partir do ID (Não precisa do #) e adiciona uma classe.*/
+
+        const divs = document.getElementsByTagName('div') /* Pega TODOS (pq tá no plural) os elementos da tag 'div' */
+        /* As vezes é melhor transformar o HTMLCollection em um array para trabalhar em cima dele. */
+        Array.from(divs).forEach(e => {e.classList.remove('destaque')}) /* 'Array.from' transforma a lista HTMLCollection em uma lista array. */
+
+        const divsArray = [...divs] /* Outra forma bem mais facild e transformar um HTMLCollection em um array */
+        divsArray.forEach(e => {e.classList.add('destaque')}) /* Adiciona a classe 'destaque' à todas as divs */
+
+        const ultimosElementos = document.getElementsByClassName('ultimo') /* Pega todos os elementos com a classe ultimo e armazena como uma lista HTMLCollection */
+        for(let e of ultimosElementos) { /* Percorre a lista de elementos e remove a classe 'destaque'. */
+            e.classList.remove('destaque') /* Não dá pra usar 'forEach()' em HTMLCollection. Tem q antes converter-los em uma lista array se for o caso.  */
+        }
+    </script>
+</body>
+</html>

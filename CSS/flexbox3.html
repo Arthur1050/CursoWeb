@@ -6,7 +6,25 @@
     <title>Flexbox #03</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        .flex-container {
+            display: flex;
+        }
+
+        .flex-container div {
+            margin: 0px;
+            flex-basis: 100px; /* Define a largura do flex item no sentido do main axis */
+            width: 200px; /* A largura por padrão pode sim ser usada. Porém, a prioridade vai ser do flex-basis */
+        }
+
+        .flex-container div:nth-child(4) {
+            /* Setando o grow shrink e basis numa propriedade só */
+            /* grow shrink basis */
+            flex: 3 6 100px; /* Quando flex-box for maior, o filho 4 será o meior. Quando flex box for menor, filho 4 será o menor. */
+        }
+
+        .flex-container {
+            width: 450px;
+        }
     </style>
 </head>
 

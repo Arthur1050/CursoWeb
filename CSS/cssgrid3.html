@@ -6,7 +6,50 @@
     <title>CSS Grid #03</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        header {
+            grid-area: cabecalho; /* Nomeando os elementos do grid-box para depois serem organizados */
+        }
+
+        nav {
+            grid-area: navegacao;
+        }
+
+        main {
+            grid-area: conteudo;
+        }
+
+        footer {
+            grid-area: rodape;
+        }
+
+        body {
+            display: grid;
+            min-height: 100vh; /* Ocupara toda a altura da pagina */
+            grid-template-columns: 300px 1fr; /* Duas colunas, uma de 300px e outra do q sobrar */
+            grid-template-rows: 100px 1fr 100px; /* Três linhas, a primeira e a ultima de 100px e a do meio todo o espaço q sobrar*/
+            grid-template-areas: 
+                'cabecalho cabecalho' /* 1º Linha: Os dois espaços da primeira linha será do cabeçalho */
+                'navegacao conteudo' /* 2º Linha: A navegação ocupa 300px da segunda linha e o conteudo o que sobra */
+                'rodape rodape'; /* 3º Linha:  O rodape ocupa as duas colunas da terceira linha. */
+        }
+
+        /* Forma de organizar para quando for acessado por um celular */
+        @media(max-width: 700px) {
+            body {
+                grid-template-columns: 1fr;
+                grid-template-rows: 100px 100px 1fr 100px;
+                grid-template-areas: 
+                    'cabecalho'
+                    'navegacao'
+                    'conteudo'
+                    'rodape';
+            }
+        }
     </style>
 </head>
 
