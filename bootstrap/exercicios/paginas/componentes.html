@@ -1,0 +1,295 @@
+<!-- Título (jumbotron) -->
+<!-- Breadcrumb -->
+<div class="jumbotron p-4 my-1">
+    <h1 class="display-4">Componentes</h1>
+    <p class="lead m-1">Exemplo de alguns componentes do Bootstrap.</p>
+</div>
+
+<!-- Breadcrumb - Migalha de pão -->
+<nav class="mb-5">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#/paginas/bemVindo.html">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Componentes</li>
+    </ol>
+</nav>
+
+<h1>1. Botões -
+    <small>
+        <a href="https://getbootstrap.com/docs/4.0/components/buttons/" target="_black">Documentação Oficial</a>
+    </small>
+</h1>
+<hr>
+
+<!-- Botões -->
+<div class="mb-3">
+    <button class="btn btn-primary">Salvar</button> <!-- "btn": Define que o elemento será um botão. Logo em seguida, está declarado a cor dele. -->
+    <button class="btn btn-secondary">Cancelar</button>
+    <button class="btn btn-outline-success">Finalizar</button>
+    <!-- Disabled: Deixa o botão com aparencia de desabilitado -->
+    <button class="btn btn-danger" disabled>Excluir</button> <!-- Pode ser adicionado nas clases também, mas não irá desabilitar o botão de fato -->
+    <button class="btn btn-warning" data-toggle="button">Selecione</button> <!-- Data-toggle="button" deixa o btn com comportamento de um toggle -->
+</div>
+
+<div class="btn-group mb-3"> <!-- Agrupa todos os botões em uma única linha -->
+    <button class="btn btn-info">Esquerda</button>
+    <button class="btn btn-info active">Centro</button> <!-- Active: efeito de botão prescionado  -->
+    <button class="btn btn-info">Direita</button>
+</div>
+
+<div class="dropdown">
+    <button class="btn btn-danger btn-lg dropdown-toggle" data-toggle="dropdown"> <!-- btn-lg: Botão largo; Dropdown-toggle: Torna-o um dropdown -->
+        Comprar!
+    </button>
+    <div class="dropdown-menu">
+        <a href="#" class="dropdown-item">Paypal</a>
+        <a href="#" class="dropdown-item">Pagseguro</a>
+    </div>
+</div>
+
+<h1 class="mt-5">2. Progresso -
+    <small>
+        <a href="https://getbootstrap.com/docs/4.0/components/progress/" target="_black">Documentação Oficial</a>
+    </small>
+</h1>
+<hr>
+
+<!-- Progresso -->
+<div class="progress mb-4"> <!-- progress: renderiza o fundo/parte cinza da progress bar -->
+    <div class="progress-bar" style="width: 25%;"></div> <!-- A propria progress bar, tendo seu progresso gerido pelo estyle width; -->
+</div>
+
+<div class="progress mb-4">
+    <div class="progress-bar progress-bar-striped bg-success" style="width: 50%;">50%</div> <!-- progress-bar-striped: Deixa a barra listrada -->
+</div>
+
+<div class="progress mb-4" style="height: 50px;"> <!-- É possível aumentar a altura da progress-bar também -->
+    <div class="progress-bar" style="width: 15%;">15%</div> <!-- Adicionando um amontoado de progress-bar -->
+    <div class="progress-bar bg-danger" style="width: 30%;">30%</div>
+    <div class="progress-bar bg-info" style="width: 20%;">20%</div>
+    <div class="progress-bar bg-warning" style="width: 25%;">25%</div>
+</div>
+
+<div class="progress d-flex flex-column" style="height: auto;"> <!-- Amontoado de progress bar só que em coluna (um em cima do outro) -->
+    <div class="progress-bar" style="width: 15%;">15%</div> 
+    <div class="progress-bar bg-danger" style="width: 30%;">30%</div>
+    <div class="progress-bar bg-info" style="width: 20%;">20%</div>
+    <div class="progress-bar bg-warning" style="width: 25%;">25%</div>
+</div>
+
+<h1 class="mt-5">3. Mensagens (Alertas) -
+    <small>
+        <a href="https://getbootstrap.com/docs/4.0/components/alerts/" target="_black">Documentação Oficial</a>
+    </small>
+</h1>
+<hr>
+
+<!-- Alertas -->
+<div class="alert alert-success"> <!-- "alert": Estiliza a div como um alert; "alert-sucess": Deixa o alert tematizado com a cor verde. -->
+    Operação realizada com sucesso!!
+</div>
+<div class="alert alert-warning">
+    <strong>Cuidado!</strong> Operação gerou impacto no estoque! <!-- Strong: destaca o texto -->
+</div>
+<div class="alert alert-danger">
+    <strong>Erro!</strong> Ocorreu um erro inesperado!
+    <a href="#" class="alert-link">Mais detalhes</a> <!-- alert-link: Estiliza um link dentro do alert -->
+</div>
+<!-- Alert com cabeçalho corpo e rodapé -->
+<div class="alert alert-success">
+    <h4 class="alert-heading">Parabéns!</h4> <!-- alert-heading: Define um tipo de cabeçalho dentro de um alert. -->
+    <p>Processo realizado com sucesso!</p>
+    <hr>
+    <p>Pode ficar orgulhoso!</p>
+</div>
+
+<!-- Alert com botão de close -->
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+<h1 class="mt-5">4. Paginação -
+    <small>
+        <a href="https://getbootstrap.com/docs/4.0/components/pagination/" target="_black">Documentação Oficial</a>
+    </small>
+</h1>
+<hr>
+
+<!-- Paginação -->
+<div>
+    <nav>
+        <ul class="pagination"> <!-- Define a lista não ordenada como a barra de páginas -->
+            <li class="page-item"> <!-- Define o primeiro item do componente de paginação, no caso "anterior" -->
+                <a href="#" class="page-link">Anterior</a> <!-- Link que ira renderizar a página requisitada -->
+            </li>
+            <li class="page-item"> <!-- Página 1 -->
+                <a href="#" class="page-link">1</a> 
+            </li>
+            <li class="page-item active"> <!-- Active: Estiliza o item como uma opção selecionada -->
+                <a href="#" class="page-link">2</a> <!--  -->
+            </li>
+            <li class="page-item"> <!-- Página 3 -->
+                <a href="#" class="page-link">3</a>
+            </li>
+            <li class="page-item"> <!-- Página 4 -->
+                <a href="#" class="page-link">4</a>
+            </li>
+            <li class="page-item"> <!-- Página 5 -->
+                <a href="#" class="page-link">5</a>
+            </li>
+            <li class="page-item">
+                <a href="#" class="page-link">Próximo</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<h1 class="mt-5">5. Tooltip -
+    <small>
+        <a href="https://getbootstrap.com/docs/4.0/components/tooltip/" target="_black">Documentação Oficial</a>
+    </small>
+</h1>
+<hr>
+
+<!-- Tooltip -->
+<div>
+    <div class="alert alert-warning">
+        Precisa chamar uma função JS!
+        <strong>E agora?</strong>
+        <hr>
+        Função: $('[data-toggle="tooltip"]').tooltip()
+    </div>
+
+    <!-- Aplicando o tooltip em cima de um botão -->
+    <!-- Data-toggle: "tooltip" -> Quando passar com o mouser por cima do botão ele irá aparecer -->
+    <!-- Data-placement="top" -> Faz com q o tolltip apareça em cima. Pode ser tbm right, left e bottom. -->
+    <!-- tittle= -> Define o titulo q irá aparecer no tooltip -->
+    <button class="btn btn-danger"
+            data-toggle="tooltip" 
+            data-placement="top" 
+            title="Pense antes!">Excluir</button>
+</div>
+
+<h1 class="mt-5">6. Slider -
+    <small>
+        <a href="https://getbootstrap.com/docs/4.0/components/carousel/" target="_black">Documentação Oficial</a>
+    </small>
+</h1>
+<hr>
+
+<!-- Slider -->
+<div>
+    <!-- class="carrousel slide": Define um "carrosel" de imagens -->
+    <!-- id="slider": Usado para ser facilmento identificado pelos componentes de interação. -->
+    <!-- data-ride="carousel": Indica o componente que vai receber a animação de slides pelo js -->
+    <!-- Há alguns outros "data-" de manioulação do slide como "data-interval, data-pause, etc..." -->
+    <div class="carousel slide" id="slider" data-ride="carousel">
+        <div class="carousel-inner bg-dark"> <!-- Container de imagens -->
+            <div class="carousel-item active"><!-- A imagem a ser exibida uma de cada vez -->
+                <img src="/imgs/slide1.png" alt="Slider1" class="d-block mx-auto">
+            </div>
+            <div class="carousel-item">
+                <img src="/imgs/slide2.png" alt="Slider2" class="d-block mx-auto">
+            </div>
+            <div class="carousel-item">
+                <img src="/imgs/slide3.png" alt="Slider3" class="d-block mx-auto">
+            </div>
+            <!-- Adicionando botoes de interação com o slider -->
+            <a href="#slider" class="carousel-control-prev" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a href="#slider" class="carousel-control-next" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<h1 class="mt-5">7. Accordion -
+    <small>
+        <a href="https://getbootstrap.com/docs/4.0/components/collapse/" target="_black">Documentação Oficial</a>
+    </small>
+</h1>
+<hr>
+
+<!-- Accordion -->
+<div>
+    <!-- Esse será o elemento que comportará o componente accordion do bootstrap -->
+    <div class="mb-5" id="accordion">
+        <!-- class="card": Define o card que terá dentro todas as perguntas, respostas e interações. -->
+        <div class="card">
+            <!-- "card-header": Estiliza como um cabeçalho do card -->
+            <div class="card-header" >
+                <h5 class="mb-0">
+                    <!-- "btn btn-link": Estilisa como um link clicavel -->
+                    <!-- data-toggle="collapse": Atribui uma função à esse botão de "collapse" -->
+                    <!-- data-target="#resposta1": Define o alvo da função desse botão, no caso o elemento de id "respsota1" -->
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#resposta1">
+                        Qual era a cor do cavalo branco de São Jorge?
+                    </button>
+                </h5>
+            </div>
+            <!-- 
+                data-parent="#accordion": Assimila o corpo do card ao elemento do respectivo id (necessario para não 
+                haver problemas em uma página com varios accordions.)
+                Também é declarado para que quando um card seja aberto, outro card do mesmo "data-parent" 
+                seja fechado automaticamente.
+            -->
+            <div class="collapse" id="resposta1" data-parent="#accordion">
+                <!-- "card-body": Estiliza como o corpo do card -->
+                <div class="card-body">
+                    Talvez azul...
+                </div>
+            </div>
+
+            <!-- Adicionando mais cards... -->
+            <div class="card-header" >
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#resposta2">
+                        Quem veio primeiro, o ovo ou a galinha?
+                    </button>
+                </h5>
+            </div>
+            <div class="collapse" id="resposta2" data-parent="#accordion">
+                <div class="card-body">
+                    ERROR!
+                </div>
+            </div>
+
+            <div class="card-header" >
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#resposta3">
+                        Qual a capital do Brasil?
+                    </button>
+                </h5>
+            </div>
+            <div class="collapse" id="resposta3" data-parent="#accordion">
+                <div class="card-body">
+                    Distrito Federal!
+                </div>
+            </div>
+
+            <div class="card-header" >
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#resposta4">
+                        O peito do pé do Pedro era preto?
+                    </button>
+                </h5>
+            </div>
+            <div class="collapse" id="resposta4" data-parent="#accordion">
+                <div class="card-body">
+                    ???????????????
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    /* Para fazer o tooltip funfar */
+    $('[data-toggle="tooltip"]').tooltip()
+</script>

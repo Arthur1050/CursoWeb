@@ -31,6 +31,39 @@
         <button wm-submit>Pesquisar</button>
     </form>
     <script>
-        // ...
+        /* Parando o comportamento padrão */
+        const submit = document.querySelector('[wm-submit]')
+        submit.onclick = function(e) {
+            e.preventDefault()
+
+            /* Tratando os dados do formulario */
+            const form = e.target.parentNode /* Pega o elemento form (ParenteNode: Pai do elemento. Nesse caso, pai do botão submit, ou seja, o formulario) */
+            const formData = new FormData(form) /* Pega */
+            formData.append('ajax', true) /* Adiciona uma nova informação ao formulario */
+            console.log(formData.get('q')) /* .get() imprime um determinado valor de dentro do formulario */
+            console.log(formData.has('hl')) /* Verifica se um determinado campo está ou não contido */
+
+            for (let dado of formData) { /* O formData também tem um interator */
+                console.log(dado)
+            } 
+        }
+
+
+        /* MESMA COISA QUE O DE CIMA SÓ QUE COM UM METHODO DE CAPTURA E TRATAMENTO DO FORMULARIO DIFERENTE
+        const form = document.forms[0]
+        form.onsubmit = function(e) {
+            e.preventDefault()
+
+            const form = e.target.parentNode
+            const formData = new FormData(form)
+            formData.append('ajax', true) 
+            console.log(formData.get('q'))
+            console.log(formData.has('hl'))
+
+            for (let dado of formData) {
+                console.log(dado)
+            } 
+        }
+        */
     </script>
 </body>

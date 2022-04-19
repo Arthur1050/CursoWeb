@@ -1,0 +1,135 @@
+<!-- Título (jumbotron) -->
+<!-- Breadcrumb -->
+<!-- Título da página que dá "boas vindas"(jumbotron) -->
+<div class="jumbotron p-4 my-1">
+    <h1 class="display-4">Sistema de Grid</h1>
+    <p class="lead m-1">Evolução da Responsividade: Containers, Linhas e 12 Colunas.
+    </p>
+</div>
+
+<!-- Breadcrumb - Migalha de pão -->
+<nav class="mb-5">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#/paginas/bemVindo.html">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Grid</li>
+    </ol>
+</nav>
+
+<p class="lead">
+    <a href="https://getbootstrap.com/docs/4.0/layout/grid/"
+        target="_black">Documentação Oficial</a>
+</p>
+
+<div class="exercicio">
+    <h1>1. Grid Básica</h1>
+    <hr>
+
+    <!-- Grid Básica -->
+    <!-- ".container-fluid": Ocupa a largura toda da tela e se redimensiona de acordo com ela. Só ".container" ocupa 1100px de largura. -->
+    <div class="container-fluid">
+        <div class="row"> <!-- ".row" Define a primeira linha da tabela -->
+            <div class="col bg-primary">1</div> <!-- ".col" Define as colunas da tabela -->
+            <div class="col bg-danger">2</div>
+            <div class="col bg-warning">3</div>
+            <div class="col bg-info">4</div>
+            <div class="col bg-secondary">5</div>
+        </div>
+        <div class="row mt-3">
+            <div class="col bg-danger">1</div> <!-- Ocupara 1,5 colunas das 12 -->
+            <div class="col-4 bg-warning">2</div> <!-- Ocupa 4 colunas das 12 -->
+            <div class="col-5 bg-info">3</div> <!-- Ocupa 5 colunas das 12 -->
+            <div class="col bg-primary">4</div> <!-- Restará 3 colunas para serem preenchidas, logo ele ocupara 1,5 coluna das 12 -->
+        </div>
+    </div>
+
+    <h1 class="mt-5">2. Grid Responsiva</h1>
+    <hr>
+
+    <!-- Grid Responsiva -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Quando a tela for a de um celular, cada celula ocupará as 12 colunas -->
+            <!-- Quando a tela for pequena(sm), cada célula ocupara 6 colunas -->
+            <!-- Quando a tela for media(md) cada célula ocupara 3 colunas -->
+            <!-- Quando a tela for larga(lg) cada célular ocupara 2 colunas -->
+            <!-- Quando a tela for extra larga(xl), cada célula ocupara 1 coluna apenas -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-primary">1</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-danger">2</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-warning">3</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-info">4</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-success">5</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-secondary">6</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-danger">7</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-info">8</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-success">9</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-secondary">10</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-warning">11</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-primary">12</div>
+        </div>
+    </div>
+
+    <h1 class="mt-5">3. Quebra de Linha</h1>
+    <hr>
+
+    <!-- Quebra de Linha -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Quebrando a linha antes das 12 colunas serem completamente preenchidas -->
+            <div class="col-3 bg-primary">1</div>
+            <div class="col-3 bg-danger">2</div>
+            <div class="col-7 bg-success">3</div> <!-- 7 extrapola o numero de 12 colunas, logo essa coluna vai quebrar para baixo tbm -->
+            <div class="w-100"></div> <!-- "w-100": Compoem 100% da largura da tela, fazendo com que a proxima coluna vá para baixo -->
+            <col-3 class="col-3 bg-warning">4</col-3>
+        </div>
+    </div>
+
+    <h1 class="mt-5">4. Ordem</h1>
+    <hr>
+
+    <!-- Ordem -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4 order-5 bg-primary">1</div> <!-- Segundo a ser exibido ("order 5") -->
+            <div class="col-4 order-12 bg-danger">2</div> <!-- Terceiro a ser exibido ("order 12") -->
+            <div class="col-4 order-1 bg-warning">3</div> <!-- Primeiro a ser exibido ("order 1") -->
+        </div>
+    </div>
+
+    <h1 class="mt-5">5. Offset</h1>
+    <hr>
+
+    <!-- Offset -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Offset: colunas a serem puladas antes do "col" -->
+            <div class="col-3 offset-7 bg-primary">1</div> <!-- Espaçamento de 7 colunas no começo -->
+            <div class="col-4 offset-3 bg-danger">2</div>
+            <div class="col-6 offset-1 bg-warning">3</div>
+        </div>
+    </div>
+
+    <h1 class="mt-5">6. Alinhamento</h1>
+    <hr>
+
+    <!-- Alinhamento -->
+    <div class="container-fluid">
+        <div class="row h-300">
+            <!-- Como o bootstrap usar o flexbox como referencia pro sistema de grid, é possível trazer alguns atributos e embutir os dois -->
+            <div class="col-4 align-self-end bg-primary">1</div>
+            <div class="col-4 align-self-center bg-danger">2</div>
+            <div class="col-4 align-self-start bg-warning">3</div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .exercicio div {
+        font-size: 1.5em;
+    }
+
+    .h-300 {
+        height: 300px;
+    }
+</style>

@@ -9,9 +9,50 @@
 
 <body class="conteudo exercicio">
     <div>
-        <a href="https://google.com.br">Google</a>
+        <!-- onclick="navegaEm5s(event)" -->
+        <a espera-um-pouco href="https://google.com.br">Google</a>
     </div>
     <script>
-        // ...
+        /* Criando uma função de o processo */
+        function navegaEm5s(e) {
+            e.preventDefault() /* Para o comportamento padrão do evento de navegar para outra pagina */
+            console.log('Saindo em 5s...')
+            setTimeout(() => {
+                const link = e.target /* O 'e' é o evento (click) e o "target" é a propriedade que armazena o elemento html 
+                que desparou o evento, ou seja, o proprio elemento "a" com o link google.*/
+                window.location.href = link.href /* Pega o link do elemento a e coloca no endereço da barra do navegador  */
+            }, 5000)
+        }
+
+        /* Forma de chamar uma função através do evento de click:
+
+            - A partir de uma propriedade da tag, adicionando o atributo "onclick" que recebe como valor a função em questão.
+                Vantagens:
+                    Fica mais explicito no código a existencia de um tratamento a partir de um click no link
+                Desvantagem:
+                    Perca de flexibilidade - Por ter que ficar colocando a função manualmente em todos os elementos q receberão ela
+
+            - A partir do document.querySelector() e .onclick
+                Vantagem:
+                    Mais flexivél
+                Desvantagem:
+                    Fica uma manipulação mais inplicita, o que é um problema em casos de sistemas legados
+
+            - Usando o document.querySelector() e passando um atributo personalizado como seletor
+                Vantagens:
+                    Mais flexivél do que adicionar a propriedade "onclick" tag por tag
+                    E mais explicíta do que simplesmente passar a só o nome da tag como seletor no query
+                Desvantagens:
+                    Não tem
+        */
+
+        /* Usando querySelecotor e passando o nome da tag como seletor */
+        const a1 = document.querySelector('a')
+        a1.onclick = navegaEm5s()
+
+        /* Usando querySelecotr e passando um atributo personalizado que deixa mais explicita a intenção no código como seletor */
+        const a2 = document.querySelector('[espera-um-pouco]')
+        a2.onclick = navegaEm5s()
+
     </script>
 </body>

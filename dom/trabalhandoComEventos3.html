@@ -45,7 +45,29 @@
     </div>
     <div class="direita" wm-dropzone></div>
     <script>
-        // ...
+        /* Jogar um elemento de um lado para o outro */
+        const items = document.querySelectorAll('[wm-dropzone] .item')
+        items.forEach((item, index) => {
+            item.draggable = true /* Propriedade que faz com que o elemento possa ser arrastado com o mouse */
+            item.id = item.id || `draggable-item-${index}` /* Atribui um id ao elemento caso ele não tenha um */
+            item.ondragstart = e => { /* Evento disparado quando o elemento começar a se mover */
+                e.dataTransfer.setData('item-id', e.target.id) /* DataTransfer: usado para guardar os dados que estão sendo arrastados
+                 durante uma operação de Drag e Drop, podendo guardar um ou mais tipos de dados. */
+            }
+
+            const dropzones = document.querySelectorAll('[wm-dropzone]')
+            dropzones.forEach(dropzone => {
+                dropzone.ondragover = e => e.preventDefault() /* Dispensa o comportamento padrão de quando termina de arrastar um item
+                (ondragover) para que possa ser chamado o evento ondrop (quando o item é soltado) */
+
+                dropzone.ondrop = function(e) {
+                    const id = e.dataTransfer.getData('item-id') /* Pega o elemento a partir do "item-id" do dataTransfer setado no evento "ondragstart" */
+                    const item = document.getElementById(id) /* Pega o elemento cujo o id é pego no dataTransfer */
+                    /* e.target.appendChild(item)  */
+                    dropzone.appendChild(item)
+                }
+            })
+        })
     </script>
 </body>
 

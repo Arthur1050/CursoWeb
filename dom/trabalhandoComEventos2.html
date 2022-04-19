@@ -10,6 +10,19 @@
 <body class="conteudo exercicio">
     <div>Elemento</div>
     <script>
-        // ...
+        const div = document.querySelector('div')
+
+        div.style.position = 'absolute'
+
+        div.onmousemove = e => {
+            div.style.cursor = 'move' /* Estilisa o cursor do mouse pra quando ele estiver sobre o elemento */
+            /* Laço de condição pra quando o botão do mouse estiver prescionado */
+            if (e.buttons) {
+                e.target.style.top = `${e.clientY - (e.target.clientHeight / 2)}px` /* "event.target" faz referencia ao elemento que está disparando o evento */
+                /* Altura do elemento é igual a posição do cursor no eixo Y menos a metade da altura do elemento (pro elemento ficar centralizado com o cursor) */
+
+                e.target.style.left = `${e.clientX - (e.target.clientWidth / 2)}px` /* Mesmo principio descrito acima */
+            }
+        }
     </script>
 </body>
