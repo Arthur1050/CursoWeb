@@ -1,0 +1,12 @@
+---------------------------------------------------------------------------------------------------------------------------
+| - npm install --save axios
+
+"--save": Faz com que a dependencia que está sendo instalada seja salva no campo de dependencias no package.json
+
+---------------------------------------------------------------------------------------------------------------------------
+| - npm install --save-dev axios@0.17.1 -E 
+
+"--save-dev": Significa que a dependencia especificada será usada apenas durante o desenvolvimento e não em produção
+"-E": Indica no package.json que você quer instalar exatamente a versão específicada no comando
+
+---------------------------------------------------------------------------------------------------------------------------
