@@ -18,7 +18,13 @@ const pessoa = [{
 }
 ]
 
+const nomes = ['Gabi', 'Maycon', 'Corneole', 'Sei lá', 'Jambo']
+
 for (let i of pessoa) {
+    console.log(i)
+}
+
+for (let i of nomes) {
     console.log(i)
 }
 
